@@ -6,7 +6,7 @@
 #### Chromium based browsers
 
 1. Download the source code of this repository.
-2. In your browser go to [chrome://extensions/](chrome://extensions/) or [opera://extensions/](opera://extensions/) or use the `Cmd/Ctrl Shift E` shortcut.
+2. In your browser go to [chrome://extensions/](chrome://extensions/) or [vivaldi://extensions/](vivaldi://extensions/) or use the `Cmd/Ctrl Shift E` shortcut.
 3. Enable the "Developer Mode".
 4. Click the "Load Unpacked" button.
 5. Select the directory of the downloaded extension.
@@ -24,4 +24,4 @@
 
 ### How it works
 
-The extension simply replaces the current YouTube page content with an iframe that is the embed version of the video you want to see, which (until now) does not show any ads.
+The extension simply opens a new page with an iframe that is the embed version of the video you want to see, which (until now, in most cases) does not show any ads.
