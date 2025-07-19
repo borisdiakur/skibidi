@@ -24,4 +24,4 @@
 
 ### How it works
 
-The extension simply pauses all videos on the current page and opens a new page with an iframe that is the embed version of the video you want to see, which (until now, in most cases) does not show any ads.
+The extension simply pauses all videos on the current page and, on click, opens a new page with an iframe that is the embed version of the video you want to see, which (until now, in most cases) does not show any ads. The embed video is opened with autoplay option set, so it's best to enable autoplay for youtube.com in your browser. The extension will still make sure no video is automatically, except on click.

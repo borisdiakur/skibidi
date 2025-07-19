@@ -1,3 +1,36 @@
+function pauseVids() {
+  if (document.readyState === 'loading') {
+    document.addEventListener('DOMContentLoaded', pauseVids, { once: true })
+    return
+  }
+
+  const vids = document.querySelectorAll('video')
+
+  vids.forEach((vid) => {
+    vid.pause()
+    vid.addEventListener('play', () => vid.pause(), { once: true })
+    vid.addEventListener('loadeddata', () => vid.pause(), { once: true })
+  })
+
+  const observer = new MutationObserver((muts) => {
+    muts.forEach((mut) => {
+      mut.addedNodes.forEach((node) => {
+        if (node.nodeType === Node.ELEMENT_NODE && node instanceof Element) {
+          const newVideos = node.tagName === 'VIDEO' ? [node] : node.querySelectorAll('video')
+          newVideos.forEach((/** @type HTMLVideoElement */ video) => {
+            video.pause()
+            video.addEventListener('play', () => video.pause(), { once: true })
+          })
+        }
+      })
+    })
+  })
+
+  observer.observe(document.body, { childList: true, subtree: true })
+
+  setTimeout(() => observer.disconnect(), 3_000)
+}
+
 function skibidi() {
   let v = new URLSearchParams(location.search).get('v')
 
@@ -11,19 +44,6 @@ function skibidi() {
   }
 
   if (!v) return
-
-  const vids = document.querySelectorAll('video')
-
-  vids.forEach((vid) => {
-    try {
-      vid.pause()
-      vid.muted = true
-      vid.volume = 0
-      vid.currentTime = 0
-    } catch (err) {
-      console.warn('Skibidi failed to shut up ad.', err)
-    }
-  })
 
   const html = `
     <!DOCTYPE html>
@@ -50,3 +70,5 @@ chrome.runtime.onMessage.addListener((msg) => {
       break
   }
 })
+
+pauseVids()
