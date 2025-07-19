@@ -33,7 +33,7 @@ function skibidi() {
         <title>${document.title}</title>
       </head>
       <body style="width: 100%; height: 100%; background: #222222; padding: 0; margin: 0">
-        <iframe width="100%" height="100%" src="https://www.youtube.com/embed/${v}" title="YouTube video player" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen style="border: 0"></iframe>
+        <iframe width="100%" height="100%" src="https://www.youtube.com/embed/${v}?autoplay=1&start=0" title="YouTube video player" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen style="border: 0"></iframe>
       </body>
     </html>
   `
