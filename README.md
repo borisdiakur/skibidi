@@ -24,4 +24,4 @@
 
 ### How it works
 
-The extension simply opens a new page with an iframe that is the embed version of the video you want to see, which (until now, in most cases) does not show any ads.
+The extension simply pauses all videos on the current page and opens a new page with an iframe that is the embed version of the video you want to see, which (until now, in most cases) does not show any ads.

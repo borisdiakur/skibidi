@@ -12,6 +12,19 @@ function skibidi() {
 
   if (!v) return
 
+  const vids = document.querySelectorAll('video')
+
+  vids.forEach((vid) => {
+    try {
+      vid.pause()
+      vid.muted = true
+      vid.volume = 0
+      vid.currentTime = 0
+    } catch (err) {
+      console.warn('Skibidi failed to shut up ad.', err)
+    }
+  })
+
   const html = `
     <!DOCTYPE html>
     <html lang="en" style="height: 100%">
